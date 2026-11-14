@@ -10,7 +10,7 @@ function sayHi() { console.log("Hi from a hoisted function"); }
 try { console.log(newWay); } catch (e) { console.log("let/const error:", e.message); }
 let newWay = "I am let";      // let/const are in the "temporal dead zone" until this line
 
-// ---------- 2. CLOSURES ----------
+// ---------- 2. JavaScript — Closures ----------
 console.log("--- Closures ---");
 function makeCounter() {
   let count = 0;                       // private variable

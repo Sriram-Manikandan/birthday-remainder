@@ -7,12 +7,12 @@ const { notFound, errorHandler } = require("./middleware/errorHandler");
 
 const app = express();
 
-// ---- Middleware (runs top to bottom for every request) ----
+// Middleware: each request passes through these shared CORS, parsing, and logging steps.
 app.use(cors());
 app.use(express.json()); // lets us read req.body
 app.use(logger("API"));
 
-// ---- Routes (RESTful) ----
+// System design basics: Express routes connect client requests to MongoDB-backed operations.
 app.get("/api/health", (req, res) => res.status(200).json({ status: "ok" }));
 app.use("/api/people", require("./routes/people"));
 app.use("/api/reminders", require("./routes/reminders"));

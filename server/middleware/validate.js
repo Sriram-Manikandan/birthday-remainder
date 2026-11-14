@@ -1,4 +1,4 @@
-// Validation middleware: stops bad data BEFORE it reaches the route.
+// Middleware: reject invalid request data before route handlers can write it to the database.
 function validatePerson(req, res, next) {
   const { name, birthday, group } = req.body;
   if (!name || !name.trim()) return res.status(400).json({ message: "Name is required" });

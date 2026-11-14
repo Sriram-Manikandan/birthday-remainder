@@ -3,6 +3,7 @@ function notFound(req, res, next) {
   res.status(404).json({ message: `Route not found: ${req.method} ${req.originalUrl}` });
 }
 
+// Server-side error handling: convert common database errors into clear HTTP responses.
 // Central error handler (4 arguments = Express knows it's an error handler)
 function errorHandler(err, req, res, next) {
   console.error("Error:", err.message);

@@ -1,5 +1,4 @@
-// CLOSURE: the inner function "remembers" label and count
-// even after logger() has finished running.
+// JavaScript — Closures: the request handler retains its label and count between calls.
 function logger(label) {
   let count = 0;
   return function (req, res, next) {
