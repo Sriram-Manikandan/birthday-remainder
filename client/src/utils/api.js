@@ -1,4 +1,4 @@
-// One helper that every API call goes through (async/await + error handling)
+// System design basics: the frontend uses this shared JSON boundary to communicate with the backend.
 async function request(url, options = {}) {
   const res = await fetch(url, {
     headers: { "Content-Type": "application/json" },

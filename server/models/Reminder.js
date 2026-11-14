@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Problem modeling: each reminder is a person reference plus a lead time and fire time.
 // "reminders" collection. Primary key = _id.
 // "person" is a FOREIGN KEY pointing to people._id (one person -> many reminders)
 const reminderSchema = new mongoose.Schema(

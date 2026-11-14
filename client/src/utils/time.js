@@ -34,6 +34,7 @@ export function daysUntilBirthday(birthday) {
   const [, m, d] = birthday.split("-").map(Number);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+  // Problem modeling: find the next occurrence, rolling to next year when this year's date passed.
   let next = new Date(today.getFullYear(), m - 1, d);
   if (next < today) next = new Date(today.getFullYear() + 1, m - 1, d);
   return Math.round((next - today) / 86400000);

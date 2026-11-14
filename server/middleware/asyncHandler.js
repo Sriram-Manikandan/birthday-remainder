@@ -1,5 +1,5 @@
-// Wraps an async route so any error goes to the error handler (no try/catch everywhere).
-// Another closure: the returned function remembers "fn".
+// Server-side error handling: forward rejected async route work to Express's error handler.
+// JavaScript — Closures: the returned function retains "fn" until a request arrives.
 const asyncHandler = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
